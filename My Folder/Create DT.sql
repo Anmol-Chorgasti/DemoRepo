@@ -41,4 +41,41 @@ DESCRIBE HISTORY EMPLOYEE
 
 -- COMMAND ----------
 
+SELECT * FROM EMPLOYEE@v1;
+
+-- COMMAND ----------
+
+DELETE FROM EMPLOYEE;
+
+-- COMMAND ----------
+
+RESTORE TABLE EMPLOYEE TO VERSION AS OF 2;
+
+-- COMMAND ----------
+
+SELECT * FROM EMPLOYEE;
+
+-- COMMAND ----------
+
+DESCRIBE HISTORY EMPLOYEE;
+
+-- COMMAND ----------
+
+OPTIMIZE EMPLOYEE
+ZORDER BY (id);
+
+-- COMMAND ----------
+
+DESCRIBE DETAIL EMPLOYEE;
+
+-- COMMAND ----------
+
+DESCRIBE HISTORY EMPLOYEE
+
+-- COMMAND ----------
+
+-- MAGIC %fs ls 'dbfs:/user/hive/warehouse/employee'
+
+-- COMMAND ----------
+
 
